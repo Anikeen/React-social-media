@@ -6,9 +6,7 @@ import LayoutMain from './components/Layout/Main/Main';
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={LayoutMain} />
-      </Switch>
+      <LayoutMain />      
     </Router>
   );
 }
