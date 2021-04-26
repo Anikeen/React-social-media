@@ -1,0 +1,16 @@
+.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.greeting__title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1877f2;
+  text-transform: uppercase;
+}
+.greeting__text {
+  font-size: 35px;
+}
