@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import FormAuthRegistration from '../../components/Form/Auth/Registration';
-import './Auth.css';
+import './Auth.scss';
 
 function Registration() {
   return (

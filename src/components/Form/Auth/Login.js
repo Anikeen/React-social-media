@@ -1,4 +1,4 @@
-import './Form.css';
+import './Form.scss';
 
 function FormAuthLogin() {
   return (

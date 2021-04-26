@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import FormAuthLogin from '../../components/Form/Auth/Login';
-import './Home.css';
+import './Home.scss';
 
 function Greeting() {
   return (
