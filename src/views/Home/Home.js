@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import FormAuthLogin from '../../components/Form/Auth/Login';
 import './Home.css';
 
 function Greeting() {
@@ -10,13 +12,30 @@ function Greeting() {
       <p className="greeting__text">
         Какой-то воодушевляющий текст!
       </p>
+    </section>      
+  );
+}
+
+function Authentication() {
+  return (
+    <section className="sign-in">
+      <FormAuthLogin/>
+
+      <div className="registration-jump">
+        <button className="registration-jump__btn">
+          <Link to="/accounts/registration">Создать аккаунт</Link>
+        </button>
+      </div>
     </section>
   );
 }
 
 function Home() {
   return (
-    <Greeting />
+    <div className="row">
+      <Greeting />
+      <Authentication/>      
+    </div>
   );
 }
 

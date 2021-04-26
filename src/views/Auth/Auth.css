@@ -1,4 +1,7 @@
 .auth-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   max-width: 350px;
   margin: 0 auto;
