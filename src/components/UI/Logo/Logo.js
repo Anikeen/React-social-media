@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import IconSweater from '../Icon/Sweater';
 import './Logo.css';
 
 function Logo() {
   return (
-    <div className="logo">
-      <IconSweater/>
-      <div className="logo_text">свитер</div>
-    </div>
+      <Link className="logo" to="/">
+        <IconSweater/>
+        <div className="logo_text">свитер</div>
+      </Link>
   );
 }
 
