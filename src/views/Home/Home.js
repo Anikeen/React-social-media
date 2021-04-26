@@ -22,9 +22,7 @@ function Authentication() {
       <FormAuthLogin/>
 
       <div className="registration-jump">
-        <button className="registration-jump__btn">
-          <Link to="/accounts/registration">Создать аккаунт</Link>
-        </button>
+        <Link className="registration-jump__btn" to="/accounts/registration">Создать аккаунт</Link>
       </div>
     </section>
   );
