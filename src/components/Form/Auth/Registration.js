@@ -1,9 +1,14 @@
-import './Form.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+
+import register from '../../../store/actionCreators/user/register.js';
 import useInput from '../../../hooks/useInput';
+
 import Form from '../Form';
 import FormInput from '../Input';
+import './Form.scss';
 
-function FormAuthRegistration() {
+function FormAuthRegistration(props) {
   const  className = 'auth-form';
   const  buttonText = 'Регистрация';
   
@@ -16,8 +21,11 @@ function FormAuthRegistration() {
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   let nameError = (name.isDirty && name.isEmpty) || (name.isDirty && name.minLengthError) ? true : false;
   let secondNameError = (secondName.isDirty && secondName.isEmpty) || (secondName.isDirty && secondName.minLengthError) ? true : false;
-
-  function onSubmit(e) {
+  
+  const history = useHistory();
+  const dispatch = useDispatch();
+  
+  function onSubmit(e) {    
     e.preventDefault();
 
     if (login.isEmpty) {
@@ -42,7 +50,14 @@ function FormAuthRegistration() {
 
     if(loginError || nameError || secondNameError || passwordError) return;
 
-    console.log('test');
+    const userData = {
+      login: login.value,
+      password: password.value,
+      name: name.value,
+      secondName: secondName.value
+    };
+    
+    dispatch(register(userData, history.push));
   }
   
   return (

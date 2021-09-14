@@ -1,7 +1,13 @@
-import './Form.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
+
+import signIn from '../../../store/actionCreators/user/sign_in.js';
 import useInput from '../../../hooks/useInput';
+
 import Form from '../Form';
 import FormInput from '../Input';
+import './Form.scss';
+
 
 function FormAuthLogin() {
   const  className = 'auth-form';
@@ -13,6 +19,9 @@ function FormAuthLogin() {
   let loginError = (login.isDirty && login.isEmpty) || (login.isDirty && login.emailError) ? true : false;
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   
+  const history = useHistory();
+  const dispatch = useDispatch();
+
   function onSubmit(e) {
     e.preventDefault();
 
@@ -27,8 +36,8 @@ function FormAuthLogin() {
     }
 
     if(loginError || passwordError) return;
-
-    console.log('test');
+    
+    dispatch(signIn(login.value, password.value, history.push));
   }
   
   return (
