@@ -3,13 +3,13 @@ import SIGN_IN_SUCCESS from '../../actions/user/sign_in_success.js';
 import SIGN_IN_ERROR from '../../actions/user/sign_in_error.js';
 import loginUser from '../../../api/user/login.js';
 
-function signIn(userData, redirect) {
+function signIn(login, password, redirect) {
  
   return async (dispatch) => {
     try {
       dispatch({type: SIGN_IN});
 
-      const user = await loginUser(userData);
+      const user = await loginUser(login, password);
       
       if (user) {
         dispatch({type: SIGN_IN_SUCCESS, payload: user});
