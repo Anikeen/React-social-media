@@ -7,8 +7,9 @@ import SIGN_IN_SUCCESS from '../../actions/auth/sign_in_success';
 import SIGN_IN_ERROR from '../../actions/auth/sign_in_error';
 
 const initialState = {
-  user: null,
-  loading: false,
+  isAuth: false,
+  user: {},
+  isLoading: false,
   error: null
 }
 
