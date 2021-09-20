@@ -1,6 +1,6 @@
-import SIGN_IN from '../../actions/user/sign_in.js';
-import SIGN_IN_SUCCESS from '../../actions/user/sign_in_success.js';
-import SIGN_IN_ERROR from '../../actions/user/sign_in_error.js';
+import SIGN_IN from '../../actions/auth/sign_in.js';
+import SIGN_IN_SUCCESS from '../../actions/auth/sign_in_success.js';
+import SIGN_IN_ERROR from '../../actions/auth/sign_in_error.js';
 import loginUser from '../../../api/user/login.js';
 
 function signIn(login, password, redirect) {

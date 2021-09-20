@@ -1,10 +1,10 @@
-import REGISTER from '../../actions/user/register';
-import REGISTER_SUCCESS from '../../actions/user/register_success';
-import REGISTER_ERROR from '../../actions/user/register_error';
+import REGISTER from '../../actions/auth/register';
+import REGISTER_SUCCESS from '../../actions/auth/register_success';
+import REGISTER_ERROR from '../../actions/auth/register_error';
 
-import SIGN_IN from '../../actions/user/sign_in';
-import SIGN_IN_SUCCESS from '../../actions/user/sign_in_success';
-import SIGN_IN_ERROR from '../../actions/user/sign_in_error';
+import SIGN_IN from '../../actions/auth/sign_in';
+import SIGN_IN_SUCCESS from '../../actions/auth/sign_in_success';
+import SIGN_IN_ERROR from '../../actions/auth/sign_in_error';
 
 const initialState = {
   user: null,
@@ -12,7 +12,7 @@ const initialState = {
   error: null
 }
 
-function userReducer(state = initialState, action) {
+function authReducer(state = initialState, action) {
   switch (action.type) {
     case SIGN_IN:
       return {
@@ -58,4 +58,4 @@ function userReducer(state = initialState, action) {
   }
 }
 
-export default userReducer;
+export default authReducer;

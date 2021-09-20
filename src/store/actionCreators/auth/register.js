@@ -1,6 +1,6 @@
-import REGISTER from '../../actions/user/register.js';
-import REGISTER_SUCCESS from '../../actions/user/register_success.js';
-import REGISTER_ERROR from '../../actions/user/register_error.js';
+import REGISTER from '../../actions/auth/register.js';
+import REGISTER_SUCCESS from '../../actions/auth/register_success.js';
+import REGISTER_ERROR from '../../actions/auth/register_error.js';
 import registerUser from '../../../api/user/register.js';
 
 function register(userData, redirect) {

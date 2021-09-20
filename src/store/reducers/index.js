@@ -1,7 +1,7 @@
-import userReducer from './user/user';
+import auth from './auth';
 
 const rootReducer = {
-  user: userReducer
+  auth
 }
 
 export default rootReducer;

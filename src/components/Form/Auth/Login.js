@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
-import signIn from '../../../store/actionCreators/user/sign_in.js';
+import signIn from '../../../store/actionCreators/auth/sign_in.js';
 import useInput from '../../../hooks/useInput';
 
 import Form from '../Form';
