@@ -2,19 +2,19 @@ import setIsLoading from './set_is_loading';
 import setIsAuth from './set_is_auth';
 import setUser from './set_user';
 import setError from './set_error';
-import registerUser from '../../../api/user/register.js';
+import loginUser from '../../../api/user/login.js';
 
-function register(userData, redirect) {
+function login(username, password, redirect) {
   return async dispatch => {
     dispatch(setIsLoading(true));
 
     setTimeout(async () => {
       try {
-        const newUser = await registerUser(userData);
+        const user = await loginUser(username, password);
     
-        if (newUser) {
+        if (user) {
           dispatch(setIsAuth(true));
-          dispatch(setUser(newUser));
+          dispatch(setUser(user));
           redirect('');
         }
       } catch (error) {
@@ -23,8 +23,8 @@ function register(userData, redirect) {
       }
 
       dispatch(setIsLoading(false));      
-    }, 1000);
+    }, 1000);    
   }
 }
 
-export default register;
+export default login;

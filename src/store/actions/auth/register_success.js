@@ -1,3 +1,0 @@
-const REGISTER_SUCCESS = "REGISTER_SUCCESS";
-
-export default REGISTER_SUCCESS;

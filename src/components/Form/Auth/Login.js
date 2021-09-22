@@ -1,7 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
-import signIn from '../../../store/actionCreators/auth/sign_in.js';
+import login from '../../../store/actionCreators/auth/login.js';
 import useInput from '../../../hooks/useInput';
 
 import Form from '../Form';
@@ -13,10 +13,10 @@ function FormAuthLogin() {
   const  className = 'auth-form';
   const  buttonText = 'Вход';
   
-  const login = useInput('', {isEmpty: true, isEmail: true});
+  const username = useInput('', {isEmpty: true, isEmail: true});
   const password = useInput('', {isEmpty: true, minLength: 6});
 
-  let loginError = (login.isDirty && login.isEmpty) || (login.isDirty && login.emailError) ? true : false;
+  let usernameError = (username.isDirty && username.isEmpty) || (username.isDirty && username.emailError) ? true : false;
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   
   const history = useHistory();
@@ -25,9 +25,9 @@ function FormAuthLogin() {
   function onSubmit(e) {
     e.preventDefault();
 
-    if (login.isEmpty) {
-      login.setDirty(true);
-      loginError = true;
+    if (username.isEmpty) {
+      username.setDirty(true);
+      usernameError = true;
     }
 
     if (password.isEmpty) {
@@ -35,16 +35,16 @@ function FormAuthLogin() {
       passwordError = true;
     }
 
-    if(loginError || passwordError) return;
+    if(usernameError || passwordError) return;
     
-    dispatch(signIn(login.value, password.value, history.push));
+    dispatch(login(username.value, password.value, history.push));
   }
   
   return (
     <Form className={className} buttonText={buttonText} onSubmit={onSubmit} >      
-      <FormInput {...login} error={loginError} className={className} type="text" placeholder="Почтовый адрес" >
-        {(login.isDirty && login.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
-        {(login.isDirty && !login.isEmpty && login.emailError) && <span className={`${className}__error`}>Введите корректный email</span>}
+      <FormInput {...username} error={usernameError} className={className} type="text" placeholder="Почтовый адрес" >
+        {(username.isDirty && username.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
+        {(username.isDirty && !username.isEmpty && username.emailError) && <span className={`${className}__error`}>Введите корректный email</span>}
       </FormInput>
 
       <FormInput {...password} error={passwordError} className={className} type="password" placeholder="Пароль" >

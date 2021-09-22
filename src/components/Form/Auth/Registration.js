@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 
 import register from '../../../store/actionCreators/auth/register.js';
@@ -8,16 +8,16 @@ import Form from '../Form';
 import FormInput from '../Input';
 import './Form.scss';
 
-function FormAuthRegistration(props) {
+function FormAuthRegistration() {
   const  className = 'auth-form';
   const  buttonText = 'Регистрация';
   
-  const login = useInput('', {isEmpty: true, isEmail: true});
+  const username = useInput('', {isEmpty: true, isEmail: true});
   const password = useInput('', {isEmpty: true, minLength: 6});
   const name = useInput('', {isEmpty: true, minLength: 2, isName: true});
   const secondName = useInput('', {isEmpty: true, minLength: 2, isName: true});
 
-  let loginError = (login.isDirty && login.isEmpty) || (login.isDirty && login.emailError) ? true : false;
+  let usernameError = (username.isDirty && username.isEmpty) || (username.isDirty && username.emailError) ? true : false;
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   let nameError = (name.isDirty && name.isEmpty) || (name.isDirty && name.minLengthError) ? true : false;
   let secondNameError = (secondName.isDirty && secondName.isEmpty) || (secondName.isDirty && secondName.minLengthError) ? true : false;
@@ -27,10 +27,10 @@ function FormAuthRegistration(props) {
   
   function onSubmit(e) {    
     e.preventDefault();
-
-    if (login.isEmpty) {
-      login.setDirty(true);
-      loginError = true;
+    
+    if (username.isEmpty) {
+      username.setDirty(true);
+      usernameError = true;
     }
 
     if (password.isEmpty) {
@@ -48,10 +48,10 @@ function FormAuthRegistration(props) {
       secondNameError = true;
     }
 
-    if(loginError || nameError || secondNameError || passwordError) return;
+    if(usernameError || nameError || secondNameError || passwordError) return;
 
     const userData = {
-      login: login.value,
+      username: username.value,
       password: password.value,
       name: name.value,
       secondName: secondName.value
@@ -62,9 +62,9 @@ function FormAuthRegistration(props) {
   
   return (
     <Form className={className} buttonText={buttonText} onSubmit={onSubmit} >      
-      <FormInput {...login} error={loginError} className={className} type="text" placeholder="Почтовый адрес" >
-        {(login.isDirty && login.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
-        {(login.isDirty && !login.isEmpty && login.emailError) && <span className={`${className}__error`}>Введите корректный email</span>}
+      <FormInput {...username} error={usernameError} className={className} type="text" placeholder="Почтовый адрес" >
+        {(username.isDirty && username.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
+        {(username.isDirty && !username.isEmpty && username.emailError) && <span className={`${className}__error`}>Введите корректный email</span>}
       </FormInput>
 
       <FormInput {...name} error={nameError} className={className} type="text" placeholder="Ваше имя" >

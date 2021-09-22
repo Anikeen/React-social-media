@@ -1,8 +1,8 @@
 
-function loginUser(login, password) {    // this function emits a request to the server
+function loginUser(username, password) {    // this function emits a request to the server
   const storage = localStorage.getItem('users').split('|');
   const users = storage.map(user => JSON.parse(user));
-  const userIndex = users.findIndex(user => user.login === login);
+  const userIndex = users.findIndex(user => user.username === username);
   const user = users[userIndex];
   
   if (!user) throw 'Неверный пользователь или пароль.'; 

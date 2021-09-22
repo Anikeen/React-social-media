@@ -1,10 +1,7 @@
-import REGISTER from '../../actions/auth/register';
-import REGISTER_SUCCESS from '../../actions/auth/register_success';
-import REGISTER_ERROR from '../../actions/auth/register_error';
-
-import SIGN_IN from '../../actions/auth/sign_in';
-import SIGN_IN_SUCCESS from '../../actions/auth/sign_in_success';
-import SIGN_IN_ERROR from '../../actions/auth/sign_in_error';
+import SET_AUTH from '../../actions/auth/set_auth';
+import SET_IS_LOADING from '../../actions/auth/set_is_loading';
+import SET_USER from '../../actions/auth/set_user';
+import SET_ERROR from '../../actions/auth/set_error';
 
 const initialState = {
   isAuth: false,
@@ -15,43 +12,30 @@ const initialState = {
 
 function authReducer(state = initialState, action) {
   switch (action.type) {
-    case SIGN_IN:
+    case SET_AUTH:
       return {
         ...state,
-        loading: true
-      };
+        isAuth: action.payload,
+        isLoading: false
+      }
 
-    case SIGN_IN_SUCCESS:
+    case SET_IS_LOADING:
       return {
+        ...state,
+        isLoading: action.payload
+      }
+
+    case SET_USER:
+      return {
+        ...state,
         user: action.payload,
-        loading: false,
-        error: null
-      };
-
-    case SIGN_IN_ERROR:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload
-      };
-  
-    case REGISTER:
-      return {
-        ...state,
-        loading: true
-      };
-
-    case REGISTER_SUCCESS:
-      return {
-        user: action.payload,
-        loading: false,
         error: null
       }
 
-    case REGISTER_ERROR:
+    case SET_ERROR:
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         error: action.payload
       }
 
