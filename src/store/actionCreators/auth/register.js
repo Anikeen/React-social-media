@@ -4,7 +4,7 @@ import setUser from './set_user';
 import setError from './set_error';
 import registerUser from '../../../api/user/register.js';
 
-function register(userData, redirect) {
+function register(userData) {
   return async dispatch => {
     dispatch(setIsLoading(true));
 
@@ -15,7 +15,6 @@ function register(userData, redirect) {
         if (newUser) {
           dispatch(setIsAuth(true));
           dispatch(setUser(newUser));
-          redirect('');
         }
       } catch (error) {
         dispatch(setError(error));

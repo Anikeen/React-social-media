@@ -4,7 +4,7 @@ import setUser from './set_user';
 import setError from './set_error';
 import loginUser from '../../../api/user/login.js';
 
-function login(username, password, redirect) {
+function login(username, password) {
   return async dispatch => {
     dispatch(setIsLoading(true));
 
@@ -15,7 +15,6 @@ function login(username, password, redirect) {
         if (user) {
           dispatch(setIsAuth(true));
           dispatch(setUser(user));
-          redirect('');
         }
       } catch (error) {
         dispatch(setError(error));

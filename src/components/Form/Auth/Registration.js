@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { useHistory } from "react-router-dom";
 
 import register from '../../../store/actionCreators/auth/register.js';
 import useInput from '../../../hooks/useInput';
@@ -22,7 +21,6 @@ function FormAuthRegistration() {
   let nameError = (name.isDirty && name.isEmpty) || (name.isDirty && name.minLengthError) ? true : false;
   let secondNameError = (secondName.isDirty && secondName.isEmpty) || (secondName.isDirty && secondName.minLengthError) ? true : false;
   
-  const history = useHistory();
   const dispatch = useDispatch();
   
   function onSubmit(e) {    
@@ -57,7 +55,7 @@ function FormAuthRegistration() {
       secondName: secondName.value
     };
     
-    dispatch(register(userData, history.push));
+    dispatch(register(userData));
   }
   
   return (

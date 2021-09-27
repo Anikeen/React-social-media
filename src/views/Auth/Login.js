@@ -8,7 +8,7 @@ function Login() {
       <FormAuthLogin/>
 
       <p className="auth-transition">
-        У вас ещё нет аккаунта? <Link className="auth-link" to="/accounts/registration">Зарегистрироваться</Link>
+        У вас ещё нет аккаунта? <Link className="auth-link" to="/registration">Зарегистрироваться</Link>
       </p>
     </section>
   );

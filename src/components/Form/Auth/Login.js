@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { useHistory } from "react-router-dom";
 
 import login from '../../../store/actionCreators/auth/login.js';
 import useInput from '../../../hooks/useInput';
@@ -19,7 +18,6 @@ function FormAuthLogin() {
   let usernameError = (username.isDirty && username.isEmpty) || (username.isDirty && username.emailError) ? true : false;
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   
-  const history = useHistory();
   const dispatch = useDispatch();
 
   function onSubmit(e) {
@@ -37,7 +35,7 @@ function FormAuthLogin() {
 
     if(usernameError || passwordError) return;
     
-    dispatch(login(username.value, password.value, history.push));
+    dispatch(login(username.value, password.value));
   }
   
   return (
