@@ -1,7 +1,5 @@
-import { useDispatch } from 'react-redux';
-
-import register from '../../../store/actionCreators/auth/register.js';
 import useInput from '../../../hooks/useInput';
+import useActions from '../../../hooks/useActions.js';
 
 import Form from '../Form';
 import FormInput from '../Input';
@@ -21,7 +19,7 @@ function FormAuthRegistration() {
   let nameError = (name.isDirty && name.isEmpty) || (name.isDirty && name.minLengthError) ? true : false;
   let secondNameError = (secondName.isDirty && secondName.isEmpty) || (secondName.isDirty && secondName.minLengthError) ? true : false;
   
-  const dispatch = useDispatch();
+  const {register} = useActions();
   
   function onSubmit(e) {    
     e.preventDefault();
@@ -55,7 +53,7 @@ function FormAuthRegistration() {
       secondName: secondName.value
     };
     
-    dispatch(register(userData));
+    register(userData);
   }
   
   return (

@@ -1,12 +1,9 @@
-import { useDispatch } from 'react-redux';
-
-import login from '../../../store/actionCreators/auth/login.js';
 import useInput from '../../../hooks/useInput';
+import useActions from '../../../hooks/useActions.js';
 
 import Form from '../Form';
 import FormInput from '../Input';
 import './Form.scss';
-
 
 function FormAuthLogin() {
   const  className = 'auth-form';
@@ -18,7 +15,7 @@ function FormAuthLogin() {
   let usernameError = (username.isDirty && username.isEmpty) || (username.isDirty && username.emailError) ? true : false;
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   
-  const dispatch = useDispatch();
+  const {login} = useActions();
 
   function onSubmit(e) {
     e.preventDefault();
@@ -35,7 +32,7 @@ function FormAuthLogin() {
 
     if(usernameError || passwordError) return;
     
-    dispatch(login(username.value, password.value));
+    login(username.value, password.value);
   }
   
   return (
