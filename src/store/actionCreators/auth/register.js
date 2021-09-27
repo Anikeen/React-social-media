@@ -15,6 +15,10 @@ function register(userData) {
         if (newUser) {
           dispatch(setIsAuth(true));
           dispatch(setUser(newUser));
+
+          const serializedUser = JSON.stringify(newUser);
+          localStorage.setItem('user', serializedUser);
+          localStorage.setItem('auth', 'true');
         }
       } catch (error) {
         dispatch(setError(error));

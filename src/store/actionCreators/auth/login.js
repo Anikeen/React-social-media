@@ -15,6 +15,10 @@ function login(username, password) {
         if (user) {
           dispatch(setIsAuth(true));
           dispatch(setUser(user));
+
+          const serializedUser = JSON.stringify(user);
+          localStorage.setItem('user', serializedUser);
+          localStorage.setItem('auth', 'true');
         }
       } catch (error) {
         dispatch(setError(error));
