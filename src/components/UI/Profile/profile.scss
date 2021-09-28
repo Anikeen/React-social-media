@@ -1,0 +1,46 @@
+.profile-menu {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  transition: background-color .3s;
+  &:hover {
+    background-color: #eee;
+  }
+  &__username {
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  &__img {
+    display: block;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+    background-color: #eee;
+  }
+  &__arrow {
+    margin: 0 10px;
+  }
+  &__dropbox {
+    padding: 3px 0;
+    background-color: #fff;
+  }
+  &__item {
+    position: relative;
+    height: 30px;
+    width: 100px;
+    padding: 0 15px;
+    text-align: left;
+    line-height: 30px;
+
+    transition: background-color .3s;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  &__separator {
+    border-top: 1px solid #999;
+    margin: 3px 15px;
+  }
+}
