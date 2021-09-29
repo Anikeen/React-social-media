@@ -1,5 +1,6 @@
 import Login from "../views/Auth/Login";
 import Registration from "../views/Auth/Registration";
+import Feed from "../views/Feed/Feed";
 import Home from "../views/Home/Home";
 
 export const publicRoutes = [
@@ -9,5 +10,5 @@ export const publicRoutes = [
 ]
 
 export const privateRoutes = [
-  {path: '/feed', exact: true, component: Home},  
+  {path: '/feed', exact: true, component: Feed},  
 ]
