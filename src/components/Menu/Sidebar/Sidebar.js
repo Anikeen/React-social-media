@@ -2,6 +2,8 @@ import Menu from "../Menu";
 import MenuItem from "../MenuItem";
 import SidebarItem from "./SidebarItem";
 
+import './sidebar.scss';
+
 function Sidebar() {
   const menu = [
     {
