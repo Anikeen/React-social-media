@@ -21,9 +21,11 @@ function Sidebar() {
   return (
     <Menu className="sidebar">
       {menu.map(item => {
-        <MenuItem>
-          <SidebarItem link={item.link} text={item.text} />
-        </MenuItem>
+        return (
+          <MenuItem key={item.text}>
+            <SidebarItem link={item.link} text={item.text} />
+          </MenuItem>
+        );
       })}
     </Menu>
   );
