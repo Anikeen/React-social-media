@@ -1,8 +1,9 @@
 import LayoutMain from './components/Layout/Main/Main';
-import './assets/css/bootstrap-reboot.min.css';
-import './assets/css/index.scss';
 import { useEffect } from 'react';
 import useActions from './hooks/useActions';
+
+import './assets/css/bootstrap-reboot.min.css';
+import './assets/css/index.scss';
 
 function App() {
   const {setUser, setIsAuth} = useActions();
