@@ -2,7 +2,7 @@ import './Main.scss';
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import AppRouter from '../../../router/AppRouter';
-import Content from '../Content';
+import Content from './Content';
 import { useSelector } from 'react-redux';
 import Sidebar from '../../Menu/Sidebar/Sidebar';
 
@@ -12,19 +12,21 @@ function LayoutMain() {
   return (
     <div className="main-layout">
       <Header/>
-      
-      <Content className="main-content container">
-        {
-          isAuth
-          ?
-          <div className="content-layout">
+
+      {
+        isAuth
+        ?
+          <div className="main-content content-layout container">
             <Sidebar/>
-            <AppRouter/>
+            <Content>
+              <AppRouter/>
+            </Content>
           </div>
-          :
-          <AppRouter/>
-        }
-      </Content>
+        :
+          <Content className="main-content container">
+            <AppRouter/>
+          </Content>
+      }
       
       <Footer/>
     </div>
