@@ -1,7 +1,9 @@
 import auth from './auth';
+import news from './news';
 
 const rootReducer = {
-  auth
+  auth,
+  news
 }
 
 export default rootReducer;
