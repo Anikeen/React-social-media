@@ -21,15 +21,17 @@ function Sidebar() {
   ];
 
   return (
-    <Menu className="sidebar">
-      {menu.map(item => {
-        return (
-          <MenuItem key={item.text}>
-            <SidebarItem link={item.link} text={item.text} />
-          </MenuItem>
-        );
-      })}
-    </Menu>
+    <aside>
+      <Menu className="sidebar">
+        {menu.map(item => {
+          return (
+            <MenuItem key={item.text}>
+              <SidebarItem link={item.link} text={item.text} />
+            </MenuItem>
+          );
+        })}
+      </Menu>
+    </aside>
   );
 }
 
