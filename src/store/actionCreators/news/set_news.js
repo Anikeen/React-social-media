@@ -1,4 +1,4 @@
-import SET_NEWS from '../../actions/auth/set_news';
+import SET_NEWS from '../../actions/news/set_news';
 
 function setNews(user) {
   return {type: SET_NEWS, payload: user}
