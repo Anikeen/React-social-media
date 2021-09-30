@@ -1,7 +1,7 @@
 import SET_AUTH from '../../actions/auth/set_auth';
-import SET_IS_LOADING from '../../actions/auth/set_is_loading';
+import SET_IS_LOADING from '../../actions/common/set_is_loading';
 import SET_USER from '../../actions/auth/set_user';
-import SET_ERROR from '../../actions/auth/set_error';
+import SET_ERROR from '../../actions/common/set_error';
 
 const initialState = {
   isAuth: false,

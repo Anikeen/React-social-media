@@ -1,7 +1,7 @@
-import setIsLoading from './set_is_loading';
+import setIsLoading from '../common/set_is_loading';
 import setIsAuth from './set_is_auth';
 import setUser from './set_user';
-import setError from './set_error';
+import setError from '../common/set_error';
 import registerUser from '../../../api/user/register.js';
 
 function register(userData) {

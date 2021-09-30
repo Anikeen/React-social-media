@@ -1,5 +1,5 @@
-import SET_IS_LOADING from '../../actions/news/set_is_loading';
-import SET_ERROR from '../../actions/news/set_error';
+import SET_IS_LOADING from '../../actions/common/set_is_loading';
+import SET_ERROR from '../../actions/common/set_error';
 import SET_NEWS from '../../actions/news/set_news';
 
 const initialState = {

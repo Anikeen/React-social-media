@@ -1,6 +1,6 @@
-import setIsLoading from './set_is_loading';
+import setIsLoading from '../common/set_is_loading';
 import setNews from './set_news';
-import setError from './set_error';
+import setError from '../common/set_error';
 import fetchNews from '../../../api/news/fetch_news.js';
 
 function getNews() {
