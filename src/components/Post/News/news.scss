@@ -1,0 +1,10 @@
+.post {
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__body {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+}

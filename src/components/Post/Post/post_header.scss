@@ -1,3 +1,23 @@
 .post-header {
   display: flex;
+  align-items: center;
+  &__userpic {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__author {
+    font-style: 13px;
+    line-height: 1;
+    font-weight: 600;
+    color: #2A5885;
+  }
+  &__date {
+    padding-top: 5px;
+    font-size: 11px;
+    color: #626D7A;
+  }  
 }

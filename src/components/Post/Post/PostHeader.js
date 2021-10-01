@@ -1,4 +1,4 @@
-import userpic from '../../assets/img/user.png';
+import userpic from '../../../assets/img/user.png';
 import './post_header.scss';
 
 function PostHeader(props) {
