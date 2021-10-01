@@ -18,7 +18,7 @@ function Feed() {
         ?
         news.map(post => {
           return (
-            <PostNews post={post} key={post.date} />
+            <PostNews post={post} key={post.id} />
           );
         })
         :
