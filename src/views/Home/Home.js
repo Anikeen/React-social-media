@@ -30,9 +30,11 @@ function Authentication() {
 
 function Home() {
   return (
-    <div className="row">
-      <Greeting />
-      <Authentication/>      
+    <div className="home">
+      <div className="row">
+        <Greeting />
+        <Authentication/>      
+      </div>
     </div>
   );
 }
