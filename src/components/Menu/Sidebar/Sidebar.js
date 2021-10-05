@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import Menu from "../Menu";
 import MenuItem from "../MenuItem";
 import SidebarItem from "./SidebarItem";
@@ -5,9 +7,10 @@ import SidebarItem from "./SidebarItem";
 import './sidebar.scss';
 
 function Sidebar() {
+  const userID = useSelector(store => store.auth.user.id);
   const menu = [
     {
-      link: '/',
+      link: `/${userID}`,
       text: 'Моя страница'
     },
     {
