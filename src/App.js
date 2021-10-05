@@ -1,5 +1,4 @@
 import LayoutMain from './components/Layout/Main/Main';
-import { useEffect } from 'react';
 import useActions from './hooks/useActions';
 
 import './assets/css/bootstrap-reboot.min.css';
@@ -14,7 +13,7 @@ function App() {
     setUser(user);
     setIsAuth(true);
   }
-
+  
   return (
     <LayoutMain />      
   );
