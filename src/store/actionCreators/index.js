@@ -7,6 +7,8 @@ import logout from "./auth/logout";
 import register from "./auth/register";
 import setNews from "./news/set_news";
 import getNews from "./news/get_news";
+import getUserInfo from "./user/get_user_info";
+import setUserInfo from "./user/set_user_info";
 
 export default {
   setIsAuth,
@@ -17,5 +19,7 @@ export default {
   logout,
   register,
   setNews,
-  getNews
+  getNews,
+  getUserInfo,
+  setUserInfo
 }
