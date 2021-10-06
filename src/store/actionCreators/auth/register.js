@@ -2,7 +2,7 @@ import setIsLoading from '../common/set_is_loading';
 import setIsAuth from './set_is_auth';
 import setUser from './set_user';
 import setError from '../common/set_error';
-import registerUser from '../../../api/user/register.js';
+import registerUser from '../../../api/auth/register.js';
 
 function register(userData) {
   return async dispatch => {

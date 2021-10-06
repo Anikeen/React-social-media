@@ -2,7 +2,7 @@ import setIsLoading from '../common/set_is_loading';
 import setIsAuth from './set_is_auth';
 import setUser from './set_user';
 import setError from '../common/set_error';
-import loginUser from '../../../api/user/login.js';
+import loginUser from '../../../api/auth/login.js';
 
 function login(username, password) {
   return async dispatch => {
