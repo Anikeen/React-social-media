@@ -19,7 +19,7 @@ function userReducer(state = initialState, action) {
     case SET_USER_INFO:
       return {
         ...state,
-        news: action.payload,
+        user: action.payload,
         error: null
       }
 
