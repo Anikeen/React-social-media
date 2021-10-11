@@ -18,7 +18,7 @@ function LayoutMain() {
         ?
           <div className="main-content content-layout container">
             <Sidebar/>
-            <Content>
+            <Content className="width-100">
               <AppRouter/>
             </Content>
           </div>
