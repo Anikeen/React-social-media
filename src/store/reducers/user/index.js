@@ -3,7 +3,7 @@ import SET_ERROR from '../../actions/common/set_error';
 import SET_USER_INFO from '../../actions/user/set_user_info';
 
 const initialState = {
-  user: {},
+  user: null,
   isLoading: false,
   error: null
 }
