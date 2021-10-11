@@ -1,3 +1,5 @@
+@import '../../assets/css/variables.scss';
+
 .user-content {
   display: flex;
 }
@@ -7,4 +9,63 @@
 }
 .wide-column {
   width: 100%;
+}
+.user-avatar {
+  max-height: 300px;
+  &__img {
+    max-width: 200px;
+    object-fit: cover;
+  }
+}
+.user-info {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $borderColor;
+    &__username {
+      margin-bottom: 4px;
+      font-size: 19px;
+      line-height: 25px;
+    }
+    &__status {
+      width: 100%;
+    }
+  }
+  &-body {
+    margin-top: 10px;
+    &__toggle {
+      height: 34px;
+      width: 100%;
+      padding-left: 165px;
+      margin-top: 10px;
+      line-height: 32px;
+      color: $textLink;
+      text-align-last: left;
+      border-radius: 4px;
+      &:hover {
+        background-color: #f0f2f5;
+      }
+    }
+  }
+  &-item {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 150%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__label {
+      width: 165px;
+      color: $textGrey;
+    }
+  }
+  &-missing {
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 150%;
+    color: $textGrey;
+  }
 }

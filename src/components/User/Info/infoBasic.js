@@ -13,7 +13,7 @@ function UserInfoBasic(props) {
             {info.city     && <UserInfoItem label="Город: " text={info.city} /> }
           </div>
         :
-          <div className="user-info-body__missing">
+          <div className="user-info-missing">
             Информация отсутствует
           </div>
       }
