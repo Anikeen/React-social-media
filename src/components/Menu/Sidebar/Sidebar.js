@@ -10,7 +10,7 @@ function Sidebar() {
   const userID = useSelector(store => store.auth.user.id);
   const menu = [
     {
-      link: `/${userID}`,
+      link: `/id${userID}`,
       text: 'Моя страница'
     },
     {
