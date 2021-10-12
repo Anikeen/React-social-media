@@ -12,5 +12,5 @@ export const publicRoutes = [
 
 export const privateRoutes = [
   {path: '/feed', exact: true, component: Feed},  
-  {path: '/:id', exact: true, component: User}
+  {path: '/id:id', exact: true, component: User}
 ]
