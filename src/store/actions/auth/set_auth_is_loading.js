@@ -1,0 +1,3 @@
+const SET_AUTH_IS_LOADING = "SET_AUTH_IS_LOADING";
+
+export default SET_AUTH_IS_LOADING;

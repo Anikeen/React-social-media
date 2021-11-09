@@ -1,5 +1,5 @@
-import SET_IS_LOADING from '../../actions/common/set_is_loading';
-import SET_ERROR from '../../actions/common/set_error';
+import SET_USER_IS_LOADING from '../../actions/user/set_user_is_loading';
+import SET_USER_ERROR from '../../actions/user/set_user_error';
 import SET_USER_INFO from '../../actions/user/set_user_info';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 function userReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_IS_LOADING:
+    case SET_USER_IS_LOADING:
       return {
         ...state,
         isLoading: action.payload
@@ -23,7 +23,7 @@ function userReducer(state = initialState, action) {
         error: null
       }
 
-    case SET_ERROR:
+    case SET_USER_ERROR:
       return {
         ...state,
         isLoading: false,

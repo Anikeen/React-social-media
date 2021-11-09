@@ -1,0 +1,3 @@
+const SET_USER_IS_LOADING = "SET_USER_IS_LOADING";
+
+export default SET_USER_IS_LOADING;

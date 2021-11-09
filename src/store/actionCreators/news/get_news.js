@@ -1,11 +1,11 @@
-import setIsLoading from '../common/set_is_loading';
+import setNewsIsLoading from './set_news_is_loading';
 import setNews from './set_news';
-import setError from '../common/set_error';
+import setNewsError from './set_news_error';
 import fetchNews from '../../../api/news/fetch_news.js';
 
 function getNews() {
   return async dispatch => {
-    dispatch(setIsLoading(true));
+    dispatch(setNewsIsLoading(true));
 
     setTimeout(async () => {
       try {
@@ -13,11 +13,11 @@ function getNews() {
         dispatch(setNews(news));
 
       } catch (error) {
-        dispatch(setError(error));
+        dispatch(setNewsError(error));
         alert(error);
       }
 
-      dispatch(setIsLoading(false));      
+      dispatch(setNewsIsLoading(false));      
     }, 1000);    
   }
 }

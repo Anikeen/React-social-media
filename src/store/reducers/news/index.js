@@ -1,5 +1,5 @@
-import SET_IS_LOADING from '../../actions/common/set_is_loading';
-import SET_ERROR from '../../actions/common/set_error';
+import SET_NEWS_IS_LOADING from '../../actions/news/set_news_is_loading';
+import SET_NEWS_ERROR from '../../actions/news/set_news_error';
 import SET_NEWS from '../../actions/news/set_news';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 function newsReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_IS_LOADING:
+    case SET_NEWS_IS_LOADING:
       return {
         ...state,
         isLoading: action.payload
@@ -23,7 +23,7 @@ function newsReducer(state = initialState, action) {
         error: null
       }
 
-    case SET_ERROR:
+    case SET_NEWS_ERROR:
       return {
         ...state,
         isLoading: false,

@@ -1,7 +1,7 @@
 import SET_AUTH from '../../actions/auth/set_auth';
-import SET_IS_LOADING from '../../actions/common/set_is_loading';
+import SET_AUTH_IS_LOADING from '../../actions/auth/set_auth_is_loading';
 import SET_USER from '../../actions/auth/set_user';
-import SET_ERROR from '../../actions/common/set_error';
+import SET_AUTH_ERROR from '../../actions/auth/set_auth_error';
 
 const initialState = {
   isAuth: false,
@@ -19,7 +19,7 @@ function authReducer(state = initialState, action) {
         isLoading: false
       }
 
-    case SET_IS_LOADING:
+    case SET_AUTH_IS_LOADING:
       return {
         ...state,
         isLoading: action.payload
@@ -32,7 +32,7 @@ function authReducer(state = initialState, action) {
         error: null
       }
 
-    case SET_ERROR:
+    case SET_AUTH_ERROR:
       return {
         ...state,
         isLoading: false,
