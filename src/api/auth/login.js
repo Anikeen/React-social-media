@@ -1,3 +1,4 @@
+import DB from "../../localStorageDB";
 
 function loginUser(username, password) {    // this function emits a request to the server
   if (username === '1@1.ru' && password == 123456) { // default user
@@ -8,11 +9,11 @@ function loginUser(username, password) {    // this function emits a request to 
       image: null
     };
   }
-  const storage = localStorage.getItem('users').split('|');
-  const users = storage.map(user => JSON.parse(user));
+  const db = new DB('users');
+  const users = db.getAll();
   const user = users.find(user => user.username === username && user.password === password);
   
-  if (!user) throw 'Неверный пользователь или пароль.'; 
+  if (!user) throw new Error('Неверный пользователь или пароль.'); 
   
   return {
     id: user.id,

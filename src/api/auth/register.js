@@ -1,25 +1,23 @@
+import DB from "../../localStorageDB";
 
 function registerUser(userData) { // this function emits a request to the server
   const newUser = {
     id: (new Date().valueOf()).toString().slice(6),
     ...userData
   }
-  const db = localStorage.getItem('users');
-  let users = [];
+  const db = new DB('users');
+  const users = db.getAll();
   
-  if (db === null) {
-    localStorage.setItem('users', JSON.stringify(newUser));
-  } else {
-    const storage = localStorage.getItem('users').split('|');
-    users = storage.map(user => JSON.parse(user));
+  if (users) {
     const hasUser = users.find(user => user.username === newUser.username);
-    
+
     if (!hasUser) {
       users.push(newUser);
-      const serialized = users.map(user => JSON.stringify(user));
-      localStorage.setItem('users', serialized.join('|'));
-      
-    } else throw 'Такой Email уже используется.'
+      db.store(users);
+    } else throw new Error('Такой Email уже используется.');
+
+  } else {
+    db.store(JSON.stringify(newUser));
   }
   
   return {
