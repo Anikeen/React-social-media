@@ -5,12 +5,12 @@ import useActions from "../../../hooks/useActions";
 import UserInfoBody from "./InfoBody";
 import UserInfoHeader from "./InfoHeader";
 
-function UserInfo() {
+function UserInfo(props) {
   const {getUserInfo} = useActions();
   const info = useSelector(store => store.user.user);
-
+  
   useEffect(() => {
-    getUserInfo();
+    getUserInfo(props.id);
   }, []);
 
   return (

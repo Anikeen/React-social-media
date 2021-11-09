@@ -1,9 +1,12 @@
+import { useLocation } from "react-router";
 import UserAvatar from "../../components/User/Avatar/Avatar";
 import UserInfo from "../../components/User/Info/Info";
 
 import './user.scss';
 
 function User() {
+  const id = useLocation().pathname.slice(3);
+  
   return (
     <div className="user-content">
       <div className="narrow-column">
@@ -11,7 +14,7 @@ function User() {
       </div>
 
       <div className="wide-column">
-        <UserInfo/>
+        <UserInfo id={id} />
       </div>
     </div>
   );
