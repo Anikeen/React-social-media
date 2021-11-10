@@ -11,7 +11,7 @@ function getUserInfo(id) {
       try {
         const userInfo = await fetchUserInfo(id);
         dispatch(setUserInfo(userInfo));
-        console.log(userInfo)
+        
       } catch (error) {
         dispatch(setUserError(error));
         alert(error);
