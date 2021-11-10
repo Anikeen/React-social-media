@@ -1,7 +1,7 @@
 function getDate() {
   const date = new Date();
   const fullDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`;
-  const fullTime = `${date. getHours()}:${date. getMinutes()}:${date. getSeconds()}`;
+  const fullTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 
   return fullDate + ' ' + fullTime;
 }

@@ -9,6 +9,7 @@ function Feed() {
 
   useEffect(() => {
     getNews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   return (

@@ -16,7 +16,7 @@ function ProfileButton() {
     <div className={classes.menu}>
       <div className={classes.username}>{name}</div>
 
-      <img className={classes.img} src={image ? image : noImg} alt="user image" />
+      <img className={classes.img} src={image ? image : noImg} alt="user" />
 
       <span className={classes.arrow}>
         <ArrowBottom height={8} width={12} fill={'#555'}/>

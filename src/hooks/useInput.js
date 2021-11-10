@@ -19,12 +19,13 @@ function useValidation(value, validations, setValue) {
           regex.test(String(value).toLocaleLowerCase()) ? setEmailError(false) : setEmailError(true);
           break;
         case 'isName':
-          setValue(value.replace(/[^a-zA-Zа-яА-ЯёЁ\s\.-]+$/, ''));
+          setValue(value.replace(/[^a-zA-Zа-яА-ЯёЁ\s-]+$/, ''));
           break;
         default:
           break;
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   return {

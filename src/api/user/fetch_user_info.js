@@ -16,7 +16,7 @@ const defaultUser = {
 };
 
 function fetchUserInfo(id) {
-  if (id == 1) return defaultUser;
+  if (id === '1') return defaultUser;
 
   const db = new DB('users');
   const user = db.getSingleByID(id);

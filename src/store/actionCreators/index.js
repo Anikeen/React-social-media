@@ -8,7 +8,7 @@ import getNews from "./news/get_news";
 import getUserInfo from "./user/get_user_info";
 import setUserInfo from "./user/set_user_info";
 
-export default {
+const actionCreators = {
   setIsAuth,
   setUser,
   login,
@@ -18,4 +18,6 @@ export default {
   getNews,
   getUserInfo,
   setUserInfo
-}
+};
+
+export default actionCreators;

@@ -4,7 +4,7 @@ import './post_header.scss';
 function PostHeader(props) {
   return (
     <div className="post-header">
-      <img className="post-header__userpic" src={userpic} alt="user image" />
+      <img className="post-header__userpic" src={userpic} alt="user" />
 
       <div className="post-header__info">
         <div className="post-header__author">{props.author}</div>

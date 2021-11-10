@@ -11,7 +11,7 @@ class DB {
 
   getByValue(prop, value) {
     let items = this.getAll();
-    if (items) items = items.filter(item => item[prop] == value);
+    if (items) items = items.filter(item => item[prop] === value);
     if (items.length <= 0) items = null;
     return items;
   }

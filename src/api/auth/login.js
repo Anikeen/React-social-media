@@ -1,7 +1,7 @@
 import DB from "../../localStorageDB";
 
 function loginUser(username, password) {    // this function emits a request to the server
-  if (username === '1@1.ru' && password == 123456) { // default user
+  if (username === '1@1.ru' && password === '123456') { // default user
     return {
       id: 1,
       name: 'User',
