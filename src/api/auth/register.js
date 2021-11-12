@@ -17,7 +17,7 @@ function registerUser(userData) { // this function emits a request to the server
     } else throw new Error('Такой Email уже используется.');
 
   } else {
-    db.store(JSON.stringify(newUser));
+    db.store(newUser);
   }
   
   return {
