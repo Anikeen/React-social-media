@@ -23,7 +23,7 @@ function registerUser(userData) { // this function emits a request to the server
   return {
     id: newUser.id,
     name: newUser.name,
-    secondName: newUser.secondName,
+    lastname: newUser.lastname,
     image: null
   };
 }

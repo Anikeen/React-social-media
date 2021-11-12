@@ -12,12 +12,12 @@ function FormAuthRegistration() {
   const username = useInput('', {isEmpty: true, isEmail: true});
   const password = useInput('', {isEmpty: true, minLength: 6});
   const name = useInput('', {isEmpty: true, minLength: 2, isName: true});
-  const secondName = useInput('', {isEmpty: true, minLength: 2, isName: true});
+  const lastname = useInput('', {isEmpty: true, minLength: 2, isName: true});
 
   let usernameError = (username.isDirty && username.isEmpty) || (username.isDirty && username.emailError) ? true : false;
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   let nameError = (name.isDirty && name.isEmpty) || (name.isDirty && name.minLengthError) ? true : false;
-  let secondNameError = (secondName.isDirty && secondName.isEmpty) || (secondName.isDirty && secondName.minLengthError) ? true : false;
+  let lastnameError = (lastname.isDirty && lastname.isEmpty) || (lastname.isDirty && lastname.minLengthError) ? true : false;
   
   const {register} = useActions();
   
@@ -39,18 +39,18 @@ function FormAuthRegistration() {
       nameError = true;
     }
 
-    if (secondName.isEmpty) {
-      secondName.setDirty(true);
-      secondNameError = true;
+    if (lastname.isEmpty) {
+      lastname.setDirty(true);
+      lastnameError = true;
     }
 
-    if(usernameError || nameError || secondNameError || passwordError) return;
+    if(usernameError || nameError || lastnameError || passwordError) return;
 
     const userData = {
       username: username.value,
       password: password.value,
       name: name.value,
-      secondName: secondName.value
+      lastname: lastname.value
     };
     
     register(userData);
@@ -68,9 +68,9 @@ function FormAuthRegistration() {
         {(name.isDirty && !name.isEmpty && name.minLengthError) && <span className={`${className}__error`}>Не менее {name.minLength} символов</span>}
       </FormInput>
 
-      <FormInput {...secondName} error={secondNameError} className={className} type="text" placeholder="Ваша фамилия" >
-        {(secondName.isDirty && secondName.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
-        {(secondName.isDirty && !secondName.isEmpty && secondName.minLengthError) && <span className={`${className}__error`}>Не менее {secondName.minLength} символов</span>}
+      <FormInput {...lastname} error={lastnameError} className={className} type="text" placeholder="Ваша фамилия" >
+        {(lastname.isDirty && lastname.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
+        {(lastname.isDirty && !lastname.isEmpty && lastname.minLengthError) && <span className={`${className}__error`}>Не менее {lastname.minLength} символов</span>}
       </FormInput>
 
       <FormInput {...password} error={passwordError} className={className} type="password" placeholder="Пароль" >

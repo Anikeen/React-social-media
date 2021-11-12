@@ -4,7 +4,7 @@ const defaultUser = {
   user: {
     id: 1,
     name: 'User',
-    secondName: 'Test',
+    lastname: 'Test',
     online: 'online',
     status: 'Всем привет!'
   },
@@ -25,7 +25,7 @@ function fetchUserInfo(id) {
     user: {
       id: user.id,
       name: user.name,
-      secondName: user.secondName,
+      lastname: user.lastname,
       online: 'online',
       status: 'Всем привет!'
     }

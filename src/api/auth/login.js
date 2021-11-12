@@ -5,7 +5,7 @@ function loginUser(username, password) {    // this function emits a request to 
     return {
       id: 1,
       name: 'User',
-      secondName: 'Test',
+      lastname: 'Test',
       image: null
     };
   }
@@ -18,7 +18,7 @@ function loginUser(username, password) {    // this function emits a request to 
   return {
     id: user.id,
     name: user.name,
-    secondName: user.secondName,
+    lastname: user.lastname,
     image: null
   };
 }
