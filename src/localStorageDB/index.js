@@ -23,8 +23,12 @@ class DB {
   }
 
   store(value) {
-    const serialized = value.map(item => JSON.stringify(item)).join('|');
-    localStorage.setItem(this.key, serialized);
+    if(value.length) {
+      const serialized = value.map(item => JSON.stringify(item)).join('|');
+      localStorage.setItem(this.key, serialized);
+    } else {
+      localStorage.setItem(this.key, JSON.stringify(value));
+    }
   }
 
   dropTable() {
