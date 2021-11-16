@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 import useInput from '../../../hooks/useInput';
 import useActions from '../../../hooks/useActions.js';
 
@@ -16,6 +18,7 @@ function FormAuthLogin() {
   let passwordError = (password.isDirty && password.isEmpty) || (password.isDirty && password.minLengthError) ? true : false;
   
   const {login} = useActions();
+  const isLoading = useSelector(store => store.auth.isLoading);
 
   function onSubmit(e) {
     e.preventDefault();
@@ -36,7 +39,13 @@ function FormAuthLogin() {
   }
   
   return (
-    <Form className={className} buttonText={buttonText} onSubmit={onSubmit} >      
+    <Form 
+      className={className} 
+      buttonText={buttonText} 
+      onSubmit={onSubmit} 
+      isLoading={isLoading}
+      spinnerStyles="auth-form-spinner"
+    >      
       <FormInput {...username} error={usernameError} className={className} type="text" placeholder="Почтовый адрес" >
         {(username.isDirty && username.isEmpty) && <span className={`${className}__error`}>Это поле обязательно</span>}
         {(username.isDirty && !username.isEmpty && username.emailError) && <span className={`${className}__error`}>Введите корректный email</span>}

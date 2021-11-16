@@ -8,6 +8,7 @@
   margin-right: 15px;
 }
 .wide-column {
+  position: relative;
   width: 100%;
 }
 .user-avatar {
@@ -67,5 +68,10 @@
     font-size: 14px;
     line-height: 150%;
     color: $textGrey;
+  }
+  &-spinner {
+    background-color: #fff;
+    opacity: .9;
+    border-radius: 5px;
   }
 }
