@@ -9,19 +9,15 @@ function Dropdown(props) {
   }
 
   return (
-    <div className="dropdown">
+    <div className={isShown ? 'dropdown active' : 'dropdown'}>
       <button className="dropdown__button" onClick={toggleDrop}>
         {props.dropdownButton}
       </button>
 
       {
-        isShown
-        ?
-        <div className="dropdown__menu">
-          {props.children}
-        </div>
-        :
-        ''
+        isShown &&  <div className="dropdown__menu">
+                      {props.children}
+                    </div>
       }
     </div>
   )
