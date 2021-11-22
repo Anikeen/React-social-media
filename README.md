@@ -5,8 +5,8 @@ This project was built with **React** and **Redux** state manager.
 The application consists only of the frontend part, its server api is an imitation. All data is stored in local storage.
 
 You can register a new user or log into a pre-made account.
-`login: **1@1.ru**`
-`password: **123456**`
+`login: 1@1.ru`
+`password: 123456`
 
 **This version of the application is not final and will be improved.**
 
